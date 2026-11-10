@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Unit 3.4: Ancient Climates &amp; Mass Extinctions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --surface:#ffffff; --surface-2:#eef2f1; --line:#d5dad8;
+  --ink:#1f2a33; --muted:#5d6872;
+  --teal:#137a71; --gold:#94660a; --ember:#b5461f;
+  --serif:"Fraunces", Georgia, "Times New Roman", serif;
+  --sans:"IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --cue-w:12.5rem;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.6}
+img,svg{max-width:100%}
+a{color:var(--teal)}
+a:hover{color:var(--gold)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:#efe9dc}
+.hero-strata{display:block;width:100%;height:auto}
+.hero-text{max-width:68rem;margin:0 auto;padding:2.25rem 1.25rem 2.5rem}
+.course{color:var(--muted);font-size:.95rem;margin:0 0 .5rem}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,5.2vw,3.6rem);line-height:1.05;margin:0 0 1rem;letter-spacing:-.01em;max-width:18ch}
+.lede{font-family:var(--serif);font-size:1.25rem;line-height:1.55;max-width:40rem;margin:0;color:#33414c}
+
+/* ---------- Layout: key-terms margin column ---------- */
+main{max-width:68rem;margin:0 auto;padding:0 1.25rem 4rem}
+.part{display:grid;grid-template-columns:var(--cue-w) minmax(0,1fr);gap:0 2.25rem;padding:3rem 0;border-bottom:1px solid var(--line)}
+.part:last-of-type{border-bottom:none}
+.cues{border-right:2px solid var(--line);padding-right:1.25rem}
+.cues-inner{position:sticky;top:calc(1rem + env(safe-area-inset-top,0px))}
+.cues h3{font-family:var(--sans);font-weight:600;font-size:.85rem;color:var(--muted);margin:0 0 .6rem}
+.cues ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4rem}
+.cues li{font-size:.92rem;line-height:1.3;color:var(--gold)}
+.content{max-width:44rem}
+@media (max-width:760px){
+  .part{grid-template-columns:minmax(0,1fr);padding:2.25rem 0}
+  .cues{border-right:none;border-left:2px solid var(--line);padding:0 0 0 .9rem;margin-bottom:1.25rem}
+  .cues-inner{position:static}
+  .cues ul{flex-direction:row;flex-wrap:wrap;gap:.35rem 1rem}
+}
+.part-num{font-family:var(--serif);color:var(--teal);font-size:1rem;margin:0 0 .25rem}
+h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.2rem);line-height:1.15;margin:0 0 1rem}
+h4{font-family:var(--serif);font-weight:600;font-size:1.25rem;margin:2rem 0 .5rem}
+p{margin:0 0 1rem}
+strong{color:#10181f;font-weight:600}
+.term{color:var(--gold);font-weight:600}
+
+/* ---------- Intro box ---------- */
+.howto{display:grid;grid-template-columns:var(--cue-w) minmax(0,1fr);gap:0 2.25rem;padding:2.5rem 0;border-bottom:1px solid var(--line)}
+.howto .cues{color:var(--muted);font-size:.92rem}
+@media (max-width:760px){.howto{grid-template-columns:minmax(0,1fr)}.howto .cues{margin-bottom:1rem}}
+.targets{margin:0;padding-left:1.25rem}
+.targets li{margin-bottom:.35rem}
+
+/* ---------- Callouts ---------- */
+.callout{background:#f1f6f5;border-left:4px solid var(--teal);border-radius:0 8px 8px 0;padding:1rem 1.25rem;margin:1.5rem 0}
+.callout.gold{border-left-color:var(--gold);background:#fbf5e6}
+.callout.ember{border-left-color:var(--ember);background:#fbefe9}
+.callout h5{font-family:var(--serif);font-size:1.08rem;font-weight:600;margin:0 0 .4rem}
+.callout p:last-child{margin-bottom:0}
+
+/* ---------- Buttons ---------- */
+button{font:inherit;cursor:pointer}
+.btn{background:var(--surface-2);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:.45rem .85rem;font-size:.95rem}
+.btn:hover{border-color:var(--teal)}
+.btn[aria-pressed="true"]{background:var(--teal);color:#ffffff;border-color:var(--teal);font-weight:600}
+.btn-row{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem}
+
+/* ---------- Preservation explorer ---------- */
+.pres-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.5rem;margin:1rem 0 .75rem}
+@media (max-width:600px){.pres-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.pres-tab{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.7rem .5rem .6rem;color:var(--ink);display:flex;flex-direction:column;align-items:center;gap:.35rem;font-size:.88rem;line-height:1.2;text-align:center}
+.pres-tab svg{width:44px;height:44px}
+.pres-tab[aria-selected="true"]{border-color:var(--gold);background:var(--surface-2)}
+.pres-panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.1rem 1.25rem;min-height:7.5rem}
+.pres-panel h5{font-family:var(--serif);font-size:1.15rem;margin:0 0 .4rem;color:var(--gold)}
+.pres-panel p{margin:0 0 .5rem}
+.pres-panel .ex{color:var(--muted);font-size:.95rem;margin:0}
+
+/* ---------- Check yourself ---------- */
+.check{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1.1rem 1.25rem;margin:2rem 0 0}
+.check h5{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:0 0 .75rem}
+.check ol{margin:0;padding-left:1.25rem}
+.check li{margin-bottom:.9rem}
+.check li:last-child{margin-bottom:0}
+.reveal{margin-top:.4rem;background:none;border:none;color:var(--teal);padding:0;font-size:.93rem;text-decoration:underline;text-underline-offset:3px}
+.answer{margin:.4rem 0 0;padding:.6rem .8rem;background:var(--surface-2);border-radius:6px;font-size:.96rem}
+.answer[hidden]{display:none}
+
+/* ---------- Index fossil judge ---------- */
+.judge{display:flex;flex-direction:column;gap:.75rem;margin:1rem 0}
+.candidate{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:.9rem 1.1rem}
+.candidate p{margin:0 0 .6rem}
+.candidate .verdict{margin:.6rem 0 0;font-size:.96rem}
+.candidate.right{border-color:var(--teal)}
+.candidate.wrong{border-color:var(--ember)}
+.verdict .tag{font-weight:600}
+.right .tag{color:var(--teal)}
+.wrong .tag{color:var(--ember)}
+
+/* ---------- Correlation figure ---------- */
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:1rem;margin:1.25rem 0}
+.figure-scroll{overflow-x:auto}
+.figure svg{display:block;min-width:430px;width:100%;height:auto}
+.caption{font-size:.92rem;color:var(--muted);margin:.75rem 0 0}
+.tie{opacity:0;transition:opacity .35s}
+.show-rock .tie.rock,.show-fossil .tie.fossil{opacity:1}
+.corr-note{min-height:3.2em;font-size:.97rem;margin:.75rem 0 0}
+
+/* ---------- Time scale widget ---------- */
+.ts{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.1rem;margin:1.25rem 0 1.5rem}
+.ts-controls{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem;margin-bottom:1rem}
+.ts-controls .group{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.ts-controls .group span{font-size:.88rem;color:var(--muted);margin-right:.15rem}
+.ts-bar{display:flex;height:6.75rem;border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.seg{position:relative;border:none;border-right:1px solid rgba(0,0,0,.35);padding:0;min-width:3px;display:flex;align-items:flex-end;justify-content:flex-start;overflow:hidden;transition:flex-grow .5s ease}
+.seg:last-child{border-right:none}
+.seg .lbl{padding:.35rem .4rem;font-size:.78rem;font-weight:600;line-height:1.1;text-align:left;white-space:nowrap}
+.seg.vert .lbl{writing-mode:vertical-rl;transform:rotate(180deg);padding:.4rem .2rem}
+.seg.tight .lbl{visibility:hidden}
+.seg[aria-pressed="true"]{box-shadow:inset 0 0 0 3px var(--bg),inset 0 0 0 5px var(--gold)}
+.ts-axis{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin-top:.35rem}
+.ts-detail{margin-top:1rem;background:var(--surface-2);border-radius:8px;padding:1rem 1.15rem;min-height:9rem}
+.ts-detail h5{font-family:var(--serif);font-size:1.35rem;font-weight:600;margin:0 0 .15rem}
+.ts-detail .span{color:var(--gold);font-size:.95rem;margin:0 0 .6rem}
+.ts-detail dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1rem}
+.ts-detail dt{color:var(--muted);font-size:.92rem}
+.ts-detail dd{margin:0}
+@media (max-width:520px){.ts-detail dl{grid-template-columns:1fr}.ts-detail dt{margin-top:.35rem}}
+.ts-hint{font-size:.9rem;color:var(--muted);margin:.6rem 0 0}
+
+/* ---------- Hierarchy ---------- */
+.hier{display:flex;flex-direction:column;gap:.35rem;margin:1rem 0 1.25rem}
+.hier div{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.5rem .85rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.hier div:nth-child(1){margin-right:0}
+.hier div:nth-child(2){margin-left:1.25rem}
+.hier div:nth-child(3){margin-left:2.5rem}
+.hier div:nth-child(4){margin-left:3.75rem}
+.hier div:nth-child(5){margin-left:5rem}
+.hier b{font-family:var(--serif);font-weight:600;color:var(--gold)}
+.hier span{color:var(--muted);font-size:.93rem}
+@media (max-width:520px){.hier div{margin-left:0!important}}
+
+/* ---------- Wrap-up ---------- */
+.vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:.5rem;margin:1rem 0 1.5rem;padding:0;list-style:none}
+.vocab li{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:.5rem .75rem;font-size:.95rem}
+.vocab b{color:var(--gold);font-weight:600}
+footer{max-width:68rem;margin:0 auto;padding:2rem 1.25rem 3rem;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem}
+footer p{margin:0 0 .6rem}
+
+
+/* ---------- Notebook prompts ---------- */
+.notes{margin:2rem 0 0;border:2px solid var(--teal);border-radius:10px;padding:1.1rem 1.25rem 1.1rem;background:var(--surface)}
+.notes h5{font-family:var(--serif);font-size:1.15rem;font-weight:600;margin:0 0 .75rem;display:flex;align-items:center;gap:.5rem}
+.notes h5::before{content:"";width:1.1rem;height:1.1rem;border:2px solid var(--teal);border-radius:2px;background:repeating-linear-gradient(to bottom,transparent 0 3px,var(--teal) 3px 4px)}
+.notes ol{margin:0;padding-left:1.25rem}
+.notes li{margin-bottom:.85rem}
+.notes li:last-child{margin-bottom:0}
+.kind{display:inline-block;font-size:.8rem;font-weight:600;padding:.05rem .45rem;border-radius:4px;margin-right:.4rem;background:#e2f1ef;color:var(--teal)}
+.submit{margin-top:1.75rem;background:#f1f6f5;border-radius:10px;padding:1.1rem 1.25rem}
+.submit ol{padding-left:1.25rem;margin:0 0 .75rem}
+
+/* ---------- Videos ---------- */
+.video{margin:1.25rem 0 1.5rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.video-frame{position:relative;aspect-ratio:16/9;background:#1f2a33}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yt{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:#1f2a33;cursor:pointer}
+.yt img{width:100%;height:100%;object-fit:cover;display:block}
+.yt .play{position:absolute;left:50%;top:50%;width:68px;height:48px;margin:-24px 0 0 -34px;background:#c4302b;border-radius:12px}
+.yt .play::after{content:"";position:absolute;left:27px;top:14px;border-style:solid;border-width:10px 0 10px 17px;border-color:transparent transparent transparent #fff}
+.yt:hover .play{background:#e0332b}
+.video-meta{padding:.8rem 1.1rem 1rem}
+.video-meta h5{font-family:var(--serif);font-size:1.08rem;font-weight:600;margin:0 0 .15rem}
+.video-meta .src{font-size:.9rem;color:var(--muted);margin:0 0 .5rem}
+.video-meta p{margin:0 0 .4rem;font-size:.96rem}
+.video-meta p:last-child{margin-bottom:0}
+
+/* ---------- Print ---------- */
+@page{margin:0.6in}
+@media print{
+  :root{--bg:#fff;--surface:#fff;--surface-2:#f3f3f3;--line:#bbb;--ink:#111;--muted:#444;--teal:#106d66;--gold:#7a5a00;--ember:#9a3a14;color-scheme:light}
+  body{font-size:11pt}
+  strong{color:#000}
+  .hero-strata,.btn-row,.reveal,.ts-controls,.ts-hint{display:none}
+  .answer[hidden]{display:block}
+  .part{break-inside:auto;padding:1.25rem 0}
+  .check,.callout,.figure,.ts{break-inside:avoid}
+  .cues-inner{position:static}
+  .tie{opacity:1}
+}
+/* ---------- 3.4 additions ---------- */
+.rock-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:600px){.rock-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.iso{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin:1rem 0 1.25rem}
+@media (max-width:520px){.iso{grid-template-columns:minmax(0,1fr)}}
+.iso-card{background:#fbf5e6;border:1px solid var(--line);border-top:4px solid #e3b24d;border-radius:8px;padding:.85rem 1rem}
+.iso-card.cold{background:#eaf3f8;border-top-color:#5b9cc4}
+.iso-card h5{font-family:var(--serif);font-size:1.05rem;margin:0 0 .35rem}
+.iso-card p{margin:0 0 .4rem;font-size:.96rem}
+.iso-shell{font-weight:600;color:var(--teal)}
+.reach svg{min-width:560px}
+.tl{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem;margin:1.25rem 0 1.5rem}
+.tl-track{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:.35rem}
+@media (max-width:640px){.tl-track{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.tl-ev{border:2px solid transparent;border-radius:8px;padding:.5rem .4rem;font-size:.82rem;line-height:1.2;text-align:center;min-height:4.4rem;display:flex;flex-direction:column;justify-content:center;gap:.25rem;color:#1f2a33}
+.tl-ev.ice{background:#dcecf5}
+.tl-ev.hot{background:#f8e2d6}
+.tl-ev .when{font-size:.74rem;color:var(--muted)}
+.tl-ev[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.tl-axis{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted);margin:.35rem 0 0}
+.tl-detail,.b5-detail{margin-top:.9rem;background:var(--surface-2);border-radius:8px;padding:1rem 1.15rem;min-height:9rem}
+.tl-detail h5,.b5-detail h5{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin:0 0 .1rem}
+.tag{display:inline-block;font-size:.8rem;font-weight:600;padding:.1rem .5rem;border-radius:4px;margin:.15rem 0 .6rem}
+.tag.ice{background:#dcecf5;color:#1f5a7a}
+.tag.hot{background:#f8e2d6;color:#8a3415}
+.tag.imp{background:#ece6f5;color:#4a3478}
+.tl-detail dl,.b5-detail dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1rem}
+.tl-detail dt,.b5-detail dt{color:var(--muted);font-size:.92rem}
+.tl-detail dd,.b5-detail dd{margin:0}
+@media (max-width:520px){.tl-detail dl,.b5-detail dl{grid-template-columns:1fr}.tl-detail dt,.b5-detail dt{margin-top:.35rem}}
+.b5{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1rem;margin:1.25rem 0 1.5rem}
+.b5-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.4rem}
+@media (max-width:600px){.b5-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.b5-ev{background:var(--surface-2);border:2px solid transparent;border-radius:8px;padding:.55rem .4rem;text-align:center;font-size:.86rem;line-height:1.2;color:#1f2a33}
+.b5-ev b{display:block;font-family:var(--serif);font-size:.98rem}
+.b5-ev span{font-size:.76rem;color:var(--muted)}
+.b5-ev[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.video-frame video{position:absolute;inset:0;width:100%;height:100%;background:#1f2a33}
+@media print{.tl-ev,.b5-ev{border:1px solid #999}}
+.rock-fig{margin:0 0 .75rem}
+.rock-fig svg{display:block;width:100%;max-width:480px;height:auto;border-radius:6px}
+.video-meta .opt-tag{display:inline-block;font-size:.78rem;font-weight:600;color:var(--muted);background:var(--surface-2);border-radius:4px;padding:.05rem .45rem;margin:0 0 .35rem}
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg class="hero-strata" viewBox="0 0 1200 150" preserveAspectRatio="none" role="img" aria-label="Illustration of rock layers recording changing climates: glacial deposits, coal, salt, and a thin boundary clay">
+    <rect x="0" y="0" width="1200" height="30" fill="#c9a86a"/>
+    <rect x="0" y="30" width="1200" height="6" fill="#7a4a3a"/>
+    <rect x="0" y="36" width="1200" height="34" fill="#d9d4cb"/>
+    <rect x="0" y="70" width="1200" height="22" fill="#2f3438"/>
+    <rect x="0" y="92" width="1200" height="26" fill="#b5795b"/>
+    <rect x="0" y="118" width="1200" height="32" fill="#7d8790"/>
+    <g fill="#5d6872" opacity=".8">
+      <ellipse cx="160" cy="134" rx="14" ry="9"/><ellipse cx="520" cy="130" rx="10" ry="7"/><ellipse cx="910" cy="136" rx="16" ry="8"/><ellipse cx="1110" cy="131" rx="8" ry="6"/>
+    </g>
+    <g stroke="#9aa3a8" stroke-width="1.2" fill="none" opacity=".8">
+      <path d="M0 48 H1200 M0 58 H1200"/>
+    </g>
+    <g fill="none" stroke="#1d242d" stroke-width="2" opacity=".6">
+      <path d="M300 15 a1.5 1.5 0 0 1 3 0 a3 3 0 0 1 -6 0 a4.5 4.5 0 0 1 9 0 a6 6 0 0 1 -12 0"/>
+      <path d="M840 104 l-6 6 m6 -6 l6 6 m-6 -6 v10"/>
+    </g>
+  </svg>
+  <div class="hero-text">
+    <p class="course">Earth Systems Science, Unit 3.4</p>
+    <h1>Ancient Climates &amp; Mass Extinctions</h1>
+    <p class="lede">Earth has been an ice ball and a hothouse. Its seas have covered Texas and its glaciers have crossed the Sahara. Five times, most of life on Earth disappeared. How do geologists read these stories in the rocks, and what do they have to do with the climate we measure today?</p>
+  </div>
+</header>
+
+<main>
+
+<section class="howto" aria-labelledby="howto-h">
+  <div class="cues"><p style="margin:0">The gold words in the margin of each part are its <strong>key terms</strong>. Make sure you can explain each one.</p></div>
+  <div class="content">
+    <h2 id="howto-h" style="font-size:1.5rem">Before you start</h2>
+    <p>Work through the four parts in order. Each part has a reading and interactives, and some parts have an <strong>optional video</strong> for extra depth. Everything you need for the notebook prompts is in the reading. Each part ends with two things:</p>
+    <ul>
+      <li><strong>Check yourself</strong> questions with answers you can reveal. These aren’t graded; they’re for you.</li>
+      <li><strong>In your notebook</strong> prompts. Answer these by hand in your science notebook, including the sketches. You’ll turn these pages in to the Notes assignment.</li>
+    </ul>
+    <p>Start a new notebook page with the title <strong>Unit 3.4: Ancient Climates &amp; Mass Extinctions</strong>, your name, and today’s date.</p>
+    <p style="margin-bottom:.4rem"><strong>By the end of this lesson, I can:</strong></p>
+    <ol class="targets">
+      <li>Explain how rocks, fossils, and chemical clues (proxies) record past climates.</li>
+      <li>Describe major climate swings in Earth’s history and the evidence for each.</li>
+      <li>Use rock and fossil evidence to explain the causes and effects of mass extinctions.</li>
+      <li>Compare evidence from deep time, ice cores, historical records, and measured greenhouse gas levels.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= PART 1 ================= -->
+<section class="part" id="part1" aria-labelledby="p1-h">
+  <aside class="cues"><div class="cues-inner"><h3>Key terms</h3><ul>
+    <li>Climate</li><li>Greenhouse gas</li><li>Proxy</li><li>Tillite &amp; dropstones</li><li>Evaporites</li><li>Oxygen isotopes</li><li>Foraminifera</li><li>Ice core</li>
+  </ul></div></aside>
+  <div class="content">
+    <p class="part-num">Part 1</p>
+    <h2 id="p1-h">How do we know what ancient climates were like?</h2>
+    <p><span class="term">Climate</span> is the average weather of a place over a long time. Nobody was around with a thermometer 300 million years ago, so geologists rely on <span class="term">proxies</span>: clues preserved in rock, fossils, sediment, or ice that stand in for measurements we can’t take directly.</p>
+
+    <div class="callout">
+      <h5>A quick preview: greenhouse gases</h5>
+      <p>You’ll study this in detail in Unit 7, but you need the basic idea now. Gases like carbon dioxide (CO₂) and methane are <span class="term">greenhouse gases</span>: they let sunlight in but trap some of the heat Earth gives off. In general, <strong>more CO₂ in the atmosphere means a warmer planet, and less CO₂ means a cooler one</strong>. Volcanoes add CO₂; weathering of rock and burial of plant material remove it. Keep that balance in mind; it shows up all through this lesson.</p>
+    </div>
+
+    <h4>Clue 1: The rocks themselves</h4>
+    <p>Many rocks only form under certain conditions. Find one in the record, and you know something about the climate when it formed. Select each rock type below to see a drawing of what it looks like and what it tells you. Pay attention to the drawings: you’ll sketch some of these in your notebook.</p>
+    <div class="pres-tabs rock-tabs" role="tablist" aria-label="Rock types that record climate">
+      <button class="pres-tab" role="tab" aria-selected="true" aria-controls="rock-panel" data-k="till">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="6" width="38" height="32" rx="3" fill="#7d8790"/><ellipse cx="14" cy="18" rx="6" ry="4" fill="#c9bfa6"/><ellipse cx="29" cy="28" rx="7" ry="5" fill="#b5795b"/><circle cx="31" cy="14" r="2.5" fill="#e8e4dc"/><circle cx="12" cy="31" r="2" fill="#e8e4dc"/></svg>
+        Tillite &amp; dropstones</button>
+      <button class="pres-tab" role="tab" aria-selected="false" aria-controls="rock-panel" data-k="coal">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="6" width="38" height="32" rx="3" fill="#2f3438"/><path d="M10 30 q8 -16 22 -14" stroke="#6b7076" stroke-width="2" fill="none"/></svg>
+        Coal</button>
+      <button class="pres-tab" role="tab" aria-selected="false" aria-controls="rock-panel" data-k="evap">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="6" width="38" height="32" rx="3" fill="#ece6dc"/><g fill="none" stroke="#b9ad9a" stroke-width="1.5"><rect x="9" y="13" width="9" height="9"/><rect x="22" y="20" width="11" height="11"/><rect x="12" y="26" width="7" height="7"/></g></svg>
+        Evaporites (salt)</button>
+      <button class="pres-tab" role="tab" aria-selected="false" aria-controls="rock-panel" data-k="lime">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="6" width="38" height="32" rx="3" fill="#b4c4b3"/><path d="M3 17 H41 M3 28 H41 M18 6 V17 M28 17 V28 M14 28 V38" stroke="#869a86" stroke-width="1.5"/></svg>
+        Limestone &amp; reefs</button>
+      <button class="pres-tab" role="tab" aria-selected="false" aria-controls="rock-panel" data-k="black">
+        <svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="6" width="38" height="32" rx="3" fill="#3a3d40"/><path d="M3 14 H41 M3 21 H41 M3 28 H41" stroke="#55595d" stroke-width="1"/></svg>
+        Black shale</button>
+    </div>
+    <div class="pres-panel" id="rock-panel" role="tabpanel" aria-live="polite"></div>
+
+    <h4>Clue 2: Fossils</h4>
+    <p>Living things are adapted to particular climates, so their fossils are climate clues too. Fossil palm trees in Wyoming show that the region was once subtropical, a bit like Florida today. Fossil <strong>pollen</strong> in lake mud records which plants grew nearby, and the mix of plants shifts as climate cools or warms. Even fossil <strong>leaves</strong> help: plants have tiny pores called stomata, and leaves grown in high-CO₂ air need fewer of them. Counting stomata on fossil leaves gives an estimate of how much CO₂ was in the ancient air.</p>
+
+    <h4>Clue 3: Chemistry in shells and ice</h4>
+    <p>Oxygen comes in a light form (oxygen-16) and a heavy form (oxygen-18), called <span class="term">isotopes</span>. Water with the lighter oxygen evaporates more easily. During cold times, that evaporated water falls as snow and gets locked up in ice sheets, which leaves the ocean slightly richer in heavy oxygen-18.</p>
+    <p>Tiny shelled organisms called <span class="term">foraminifera</span> build their shells from ocean water, so their shells record the ocean’s oxygen mix. When they die, their shells pile up on the seafloor. Drill a <strong>sediment core</strong>, measure the oxygen in the shells layer by layer, and you get a record of how much ice was on Earth.</p>
+
+    <div class="iso" aria-label="Diagram comparing oxygen isotopes in warm and cold times">
+      <div class="iso-card">
+        <h5>Warm time, little ice</h5>
+        <p>Light oxygen-16 evaporates, then rains back into the sea. The ocean stays <strong>lighter</strong>.</p>
+        <p class="iso-shell">Shells: more O-16</p>
+      </div>
+      <div class="iso-card cold">
+        <h5>Cold time, big ice sheets</h5>
+        <p>Light oxygen-16 gets trapped in ice on land. The ocean becomes <strong>heavier</strong>.</p>
+        <p class="iso-shell">Shells: more O-18</p>
+      </div>
+    </div>
+
+    <p>For the more recent past, <span class="term">ice cores</span> drilled from Antarctica and Greenland are even more detailed. Snow piles up in yearly layers and turns to ice, trapping tiny bubbles of air. Scientists crush the ice and measure the ancient air directly, including its CO₂. You’ll come back to ice cores in Part 4.</p>
+
+    <h4>How far back can each clue see?</h4>
+    <p>Each proxy has a range. The scale below jumps by a factor of 10 at each mark, because the ranges are so different.</p>
+    <div class="figure reach">
+      <div class="figure-scroll">
+      <svg viewBox="0 0 640 230" role="img" aria-label="Bar chart of how far back each proxy reaches: tree rings about 10,000 years, ice cores about 800,000 years, deep-sea sediment cores tens of millions of years, rocks and fossils billions of years">
+        <g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#5d6872">
+          <line x1="150" y1="20" x2="150" y2="190" stroke="#d5dad8"/>
+          <line x1="230" y1="20" x2="230" y2="190" stroke="#d5dad8"/>
+          <line x1="310" y1="20" x2="310" y2="190" stroke="#d5dad8"/>
+          <line x1="390" y1="20" x2="390" y2="190" stroke="#d5dad8"/>
+          <line x1="470" y1="20" x2="470" y2="190" stroke="#d5dad8"/>
+          <line x1="550" y1="20" x2="550" y2="190" stroke="#d5dad8"/>
+          <line x1="630" y1="20" x2="630" y2="190" stroke="#d5dad8"/>
+          <text x="150" y="208" text-anchor="middle">1,000</text>
+          <text x="230" y="208" text-anchor="middle">10,000</text>
+          <text x="310" y="208" text-anchor="middle">100,000</text>
+          <text x="390" y="208" text-anchor="middle">1 million</text>
+          <text x="470" y="208" text-anchor="middle">10 million</text>
+          <text x="550" y="208" text-anchor="middle">100 million</text>
+          <text x="625" y="208" text-anchor="end">1 billion</text>
+          <text x="390" y="226" text-anchor="middle" font-size="11">Years before present</text>
+        </g>
+        <g font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#1f2a33">
+          <text x="140" y="44" text-anchor="end">Tree rings</text>
+          <rect x="150" y="32" width="80" height="18" rx="4" fill="#9fb1a2"/>
+          <text x="140" y="84" text-anchor="end">Ice cores</text>
+          <rect x="150" y="72" width="232" height="18" rx="4" fill="#7fb7d6"/>
+          <text x="140" y="124" text-anchor="end">Deep-sea cores</text>
+          <rect x="150" y="112" width="390" height="18" rx="4" fill="#41b8ad"/>
+          <text x="140" y="164" text-anchor="end">Rocks &amp; fossils</text>
+          <rect x="150" y="152" width="480" height="18" rx="4" fill="#b5795b"/>
+        </g>
+      </svg>
+      </div>
+      <p class="caption">Approximate reach of each kind of evidence. Ice cores go back about 800,000 years, which is why they can’t tell us about the dinosaurs’ climate. For deep time, geologists rely on rocks, fossils, and seafloor sediments.</p>
+    </div>
+
+    <div class="check">
+      <h5>Check yourself</h5>
+      <ol>
+        <li>A geologist finds a thick layer of coal with fossil ferns, and right above it, a layer of rock salt. How did the climate change?
+          <br><button class="reveal" aria-expanded="false">Show answer</button>
+          <p class="answer" hidden>It went from warm and wet (swampy forests that became coal) to hot and dry (shallow water evaporating to leave salt). The younger layer is on top, so the drying came later.</p></li>
+        <li>A sediment core shows foraminifera shells suddenly getting richer in oxygen-18. What does that suggest?
+          <br><button class="reveal" aria-expanded="false">Show answer</button>
+          <p class="answer" hidden>Ice sheets were growing. Light oxygen-16 was being locked up in ice on land, leaving the ocean, and the shells built from it, richer in heavy oxygen-18. That points to a cooling climate.</p></li>
+      </ol>
+    </div>
+    <div class="notes">
+      <h5>In your notebook</h5>
+      <ol>
+      <li><span class="kind">Sketch</span> Using the drawings in the rock explorer as a guide, draw a rock column with three layers: tillite on the bottom (show the jumbled stones and at least one dropstone), coal in the middle, and rock salt on top. Label each layer with the climate it records and one feature that gives it away, and draw an arrow showing which way time goes.</li>
+      <li><span class="kind">Write</span> Explain in your own words how the shells of foraminifera can show whether Earth had large ice sheets when they lived.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PART 2 ================= -->
+<section class="part" id="part2" aria-labelledby="p2-h">
+  <aside class="cues"><div class="cues-inner"><h3>Key terms</h3><ul>
+    <li>Icehouse</li><li>Hothouse</li><li>Snowball Earth</li><li>Albedo</li><li>Pangaea</li><li>Flood basalt</li><li>Sea level change</li>
+  </ul></div></aside>
+  <div class="content">
+    <p class="part-num">Part 2</p>
+    <h2 id="p2-h">Earth’s big climate swings</h2>
+    <p>Using these proxies, geologists have found that Earth’s climate has swung between two broad states. In <span class="term">icehouse</span> times, there are permanent ice sheets at the poles (we’re in one now). In <span class="term">hothouse</span> times, there is little or no ice anywhere, and sea levels are high. Select each event on the timeline to see what happened and how we know.</p>
+
+    <div class="tl" id="tl">
+      <div class="tl-track" id="tl-track" role="group" aria-label="Climate events, oldest on the left"></div>
+      <div class="tl-axis"><span>Older</span><span>Today</span></div>
+      <div class="tl-detail" id="tl-detail" aria-live="polite"></div>
+    </div>
+
+    <figure class="video">
+      <div class="video-frame"><button class="yt" data-id="4ONwQV26L-k" data-title="How Volcanoes Froze the Earth (Twice)" aria-label="Play video: How Volcanoes Froze the Earth (Twice)"><img src="https://i.ytimg.com/vi/4ONwQV26L-k/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div>
+      <figcaption class="video-meta">
+        <p class="opt-tag">Optional video</p><h5>How Volcanoes Froze the Earth (Twice)</h5>
+        <p class="src">PBS Eons · <a href="https://www.youtube.com/watch?v=4ONwQV26L-k" target="_blank" rel="noopener">Open on YouTube</a></p>
+        <p><strong>Watch for:</strong> the evidence that ice once reached the tropics, the feedback loop that let the ice keep spreading, and how carbon dioxide finally ended the freeze.</p>
+      </figcaption>
+    </figure>
+
+    <h4>Ice makes more ice: albedo</h4>
+    <p><span class="term">Albedo</span> is how much sunlight a surface reflects. Ice and snow reflect most of the sunlight that hits them, while dark ocean and land absorb it. So when ice spreads, Earth reflects more sunlight, cools further, and grows even more ice. That kind of self-reinforcing loop is how a cooling climate can tip into a deep freeze like Snowball Earth.</p>
+
+    <h4>Tectonic events in the record</h4>
+    <p>Climate swings often line up with big events in Earth’s crust. You’ll learn <em>why</em> plates move in Unit 4. For now, focus on what these events leave behind in the rock record:</p>
+    <ul>
+      <li><strong>Supercontinents.</strong> Around 300 to 200 million years ago, the continents were joined into one landmass, <span class="term">Pangaea</span>. Matching rocks and fossils on continents that are now oceans apart record it. You’ll examine that evidence in Unit 4.</li>
+      <li><strong>Flood basalts.</strong> At a few moments in history, enormous volumes of lava poured out over a short time, building stacks of basalt flows thousands of feet thick. These <span class="term">flood basalts</span> released huge amounts of CO₂. Several line up exactly with mass extinctions.</li>
+      <li><strong>Mountain building.</strong> Rising mountain ranges expose fresh rock to weathering, which slowly pulls CO₂ out of the air. Some cool periods line up with major mountain-building events.</li>
+      <li><strong>Sea level changes.</strong> Rock layers show shallow seas flooding the continents and then draining away. When ice sheets grow, sea level drops; when they melt, it rises.</li>
+    </ul>
+
+    <div class="callout gold">
+      <h5>Texas connection</h5>
+      <p>During the warm Cretaceous, a shallow sea covered much of Texas. The limestone and chalk under Central Texas, including the rock around the Glen Rose dinosaur tracks and the Austin Chalk, formed on that seafloor. Earlier, in the Permian, West Texas held the Capitan Reef. Later, the deep basin beside the reef dried out and filled with thick layers of gypsum and salt. Both tell climate stories you can still see in the rocks.</p>
+    </div>
+
+    <div class="check">
+      <h5>Check yourself</h5>
+      <ol>
+        <li>Why was finding glacial deposits right next to tropical limestone such a puzzle for Snowball Earth researchers?
+          <br><button class="reveal" aria-expanded="false">Show answer</button>
+          <p class="answer" hidden>Limestone usually forms in warm, shallow seas, and glacial deposits form in cold places with ice. Finding them together, in rocks that formed near the equator, suggested ice reached even the warmest parts of the planet.</p></li>
+        <li>How do growing ice sheets affect sea level, and why does that matter for ocean life?
+          <br><button class="reveal" aria-expanded="false">Show answer</button>
+          <p class="answer" hidden>Water locked up in ice on land comes from the ocean, so sea level drops. Shallow seas over the continents drain away, and most ocean life lives in those shallow waters, so habitat shrinks.</p></li>
+      </ol>
+    </div>
+    <div class="notes">
+      <h5>In your notebook</h5>
+      <ol>
+      <li><span class="kind">Sketch</span> Draw a long timeline. Mark and label Snowball Earth, the Ordovician glaciation, the Carboniferous coal swamps, the Cretaceous hothouse, and the Pleistocene ice ages. Label each one “icehouse” or “hothouse,” and next to each, write one piece of evidence for it.</li>
+      <li><span class="kind">Write</span> Explain how albedo can make a cooling climate keep getting colder. Use Snowball Earth as your example.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PART 3 ================= -->
+<section class="part" id="part3" aria-labelledby="p3-h">
+  <aside class="cues"><div class="cues-inner"><h3>Key terms</h3><ul>
+    <li>Background extinction</li><li>Mass extinction</li><li>The Big Five</li><li>Anoxia</li><li>Iridium anomaly</li><li>Shocked quartz</li><li>Recovery</li>
+  </ul></div></aside>
+  <div class="content">
+    <p class="part-num">Part 3</p>
+    <h2 id="p3-h">Mass extinctions: reading the case files</h2>
+    <p>Species go extinct all the time. That steady, ordinary rate is called <span class="term">background extinction</span>. A <span class="term">mass extinction</span> is different: a large share of Earth’s species disappears in a geologically short time, and it shows up in the rocks as a sharp drop in the number and variety of fossils at one level. Below the boundary, many kinds of fossils; above it, far fewer.</p>
+    <p>Remember from Unit 3.3 that geologists drew many era and period boundaries at exactly these levels. Five events stand out as the biggest, known as <span class="term">the Big Five</span>. Select each one.</p>
+
+    <div class="b5" id="b5">
+      <div class="b5-row" id="b5-row" role="group" aria-label="The Big Five mass extinctions, oldest first"></div>
+      <div class="b5-detail" id="b5-detail" aria-live="polite"></div>
+    </div>
+
+    <h4>The pattern behind most of them</h4>
+    <p>Look across the case files and a pattern appears: <strong>most mass extinctions line up with rapid climate change</strong>. The end-Ordovician was a fast cooling. The end-Permian and end-Triassic line up with flood basalt eruptions that pumped out CO₂ and warmed the planet quickly. Warm oceans hold less oxygen and circulate less, so <span class="term">anoxia</span> (oxygen-starved water) spread, recorded in layers of black shale. The end-Cretaceous added a sudden shock from space on top of ongoing eruptions in India.</p>
+    <p>Speed matters. Life has adapted to slow changes many times. The extinctions happened when conditions changed faster than many species could cope with.</p>
+
+    <h4>Case file: the end-Cretaceous impact</h4>
+    <p>In 1980, a team led by geologist Walter Alvarez and his father, physicist Luis Alvarez, studied a thin clay layer at the Cretaceous–Paleogene boundary in Italy. It held far more of the element iridium than normal Earth rocks. Iridium is rare in Earth’s crust but common in asteroids, so they proposed that a giant asteroid had hit Earth. Geologists tested the idea and found more evidence around the world:</p>
+    <ul>
+      <li>The same <span class="term">iridium anomaly</span> in the boundary layer at sites across the globe</li>
+      <li><span class="term">Shocked quartz</span>, crystals deformed by an enormous shock wave</li>
+      <li>Tiny glass beads (spherules) of melted rock that rained back down</li>
+      <li>Tsunami deposits around the Gulf of Mexico, including along the Brazos River in Texas</li>
+      <li>And finally, the crater itself: <strong>Chicxulub</strong>, about 180 km (110 miles) wide, buried under Mexico’s Yucatán Peninsula and the Gulf of Mexico, and the right age</li>
+    </ul>
+    <p>Dust and gases from the impact likely blocked sunlight, collapsing food chains on land and in the sea. Roughly three-quarters of species disappeared, including all dinosaurs except birds.</p>
+
+    <figure class="video">
+      <div class="video-frame"><button class="yt" data-id="tRPu5u_Pizk" data-title="The Day the Mesozoic Died" aria-label="Play video: The Day the Mesozoic Died"><img src="https://i.ytimg.com/vi/tRPu5u_Pizk/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div>
+      <figcaption class="video-meta">
+        <p class="opt-tag">Optional video</p><h5>The Day the Mesozoic Died</h5>
+        <p class="src">HHMI BioInteractive · <a href="https://www.youtube.com/watch?v=tRPu5u_Pizk" target="_blank" rel="noopener">Open on YouTube</a></p>
+        <p><strong>Watch for:</strong> how each new clue (the clay layer, iridium, the tsunami deposits in Texas, and the crater) built the case, and which kinds of life recovered first afterward.</p>
+      </figcaption>
+    </figure>
+
+    <h4>After the dying: recovery</h4>
+    <p>Mass extinctions empty out ecosystems. In the fossil record, the layers just above an extinction boundary are often dominated by a handful of hardy survivors, like the clam <em>Claraia</em> after the end-Permian or ferns right after the end-Cretaceous. Over millions of years, the survivors diversify and fill the empty roles. After the end-Permian, reptiles took over the land; after the end-Cretaceous, mammals did. Each extinction reset who ruled the next era, which is part of why the boundaries make such clear dividing lines on the time scale.</p>
+
+    <div class="callout gold">
+      <h5>Optional video: the worst extinction ever</h5>
+      <p>PBS Eons made a full episode about the end-Permian extinction, <a href="https://www.pbs.org/video/that-time-almost-everything-died-life-and-death-on-pangea-zvm6ak/" target="_blank" rel="noopener">That Time Almost Everything Died</a> (about 25 minutes, on PBS.org). It visits the actual boundary layer and walks through every suspect in the case.</p>
+    </div>
+
+    <div class="check">
+      <h5>Check yourself</h5>
+      <ol>
+        <li>What’s the difference between background extinction and a mass extinction?
+          <br><button class="reveal" aria-expanded="false">Show answer</button>
+          <p class="answer" hidden>Background extinction is the normal, steady rate at which species die out. A mass extinction is when a large share of all species disappears in a geologically short time, showing up as a sharp drop in fossil diversity at one level in the rocks.</p></li>
+        <li>Why was iridium in the boundary clay such an important clue?
+          <br><button class="reveal" aria-expanded="false">Show answer</button>
+          <p class="answer" hidden>Iridium is rare in Earth’s crust but common in asteroids. A spike of it in a single worldwide layer pointed to material from a huge impact spreading across the planet at one moment.</p></li>
+        <li>How did massive volcanic eruptions lead to the end-Permian extinction?
+          <br><button class="reveal" aria-expanded="false">Show answer</button>
+          <p class="answer" hidden>The Siberian Traps released enormous amounts of CO₂, which warmed the planet rapidly. Warm oceans held less oxygen and stopped circulating well, so oxygen-starved water spread and much of marine life died.</p></li>
+      </ol>
+    </div>
+    <div class="notes">
+      <h5>In your notebook</h5>
+      <ol>
+      <li><span class="kind">Sketch</span> Draw a rock column across the end-Cretaceous boundary: Cretaceous limestone below, the thin boundary clay, and Paleogene rock above. Label at least four pieces of evidence for the impact, and show how the fossils change from below the clay to above it.</li>
+      <li><span class="kind">Write</span> Compare the end-Permian and end-Cretaceous extinctions. What triggered each one, and how was climate change involved in both?</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PART 4 ================= -->
+<section class="part" id="part4" aria-labelledby="p4-h">
+  <aside class="cues"><div class="cues-inner"><h3>Key terms</h3><ul>
+    <li>Glacial cycles</li><li>Interglacial</li><li>ppm</li><li>Instrument record</li><li>Historical records</li><li>Rate of change</li>
+  </ul></div></aside>
+  <div class="content">
+    <p class="part-num">Part 4</p>
+    <h2 id="p4-h">Connecting deep time to today</h2>
+    <p>The last part of the story uses the most detailed records we have. Ice cores from Antarctica reach back about 800,000 years, through many ice ages.</p>
+
+    <figure class="video">
+      <div class="video-frame"><video controls preload="none" src="https://apps.spark.ucar.edu/videos/ice_core_proxy_climate_nsf.mp4" title="Ice Cores for Studying Past Climate"></video></div>
+      <figcaption class="video-meta">
+        <p class="opt-tag">Optional video</p><h5>Ice Cores for Studying Past Climate</h5>
+        <p class="src">NSF / UCAR Center for Science Education · <a href="https://scied.ucar.edu/video/ice-core-proxy-climate-nsf-video" target="_blank" rel="noopener">Open on UCAR’s site</a></p>
+        <p><strong>Watch for:</strong> what scientists can learn from the air bubbles, the dust, and the thickness of the layers in an ice core.</p>
+      </figcaption>
+    </figure>
+
+    <h4>What the ice cores show</h4>
+    <p>Over the last 800,000 years, Earth has cycled between long, cold <span class="term">glacial</span> periods and shorter, warm <span class="term">interglacials</span>, roughly every 100,000 years. We live in an interglacial now, called the Holocene. The air bubbles show that CO₂ rose and fell along with temperature through every cycle, staying between about <strong>170 and 300 parts per million (ppm)</strong>. A part per million means that out of every million molecules of air, that many are CO₂.</p>
+
+    <h4>Historical and measured records</h4>
+    <p>Proxies get more precise as they get closer to the present, and eventually direct measurements take over:</p>
+    <ul>
+      <li><span class="term">Historical records</span>: written accounts, ship logs, harvest dates, and the dates lakes froze and thawed, kept for centuries in some places</li>
+      <li>The <span class="term">instrument record</span>: thermometer readings from weather stations since the 1800s, and later satellites</li>
+      <li>Direct CO₂ measurements: continuous readings of the air at Mauna Loa Observatory in Hawaii began in 1958</li>
+    </ul>
+    <p>Those measurements show atmospheric CO₂ now <strong>above 420 ppm</strong>, compared with about 280 ppm before the 1800s. That’s higher than at any point in the 800,000-year ice core record.</p>
+
+    <div class="figure">
+      <div class="figure-scroll">
+      <svg viewBox="0 0 640 280" role="img" aria-label="Simplified sketch of carbon dioxide over the last 800,000 years. The line cycles between about 180 and 290 parts per million, then rises sharply at the present to above 420.">
+        <g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#5d6872">
+          <line x1="60" y1="30" x2="60" y2="240" stroke="#1f2a33"/>
+          <line x1="60" y1="240" x2="610" y2="240" stroke="#1f2a33"/>
+          <g stroke="#e3e6e4">
+            <line x1="60" y1="200" x2="610" y2="200"/><line x1="60" y1="152" x2="610" y2="152"/><line x1="60" y1="104" x2="610" y2="104"/><line x1="60" y1="56" x2="610" y2="56"/>
+          </g>
+          <text x="52" y="204" text-anchor="end">200</text><text x="52" y="156" text-anchor="end">300</text><text x="52" y="108" text-anchor="end">400</text><text x="52" y="60" text-anchor="end">500</text>
+          <text transform="translate(18 140) rotate(-90)" text-anchor="middle">CO₂ (ppm)</text>
+          <text x="60" y="258" text-anchor="middle">800,000</text><text x="198" y="258" text-anchor="middle">600,000</text><text x="335" y="258" text-anchor="middle">400,000</text><text x="473" y="258" text-anchor="middle">200,000</text><text x="600" y="258" text-anchor="middle">Today</text>
+          <text x="335" y="276" text-anchor="middle" font-size="11">Years before present</text>
+        </g>
+        <path d="M60 205 L80 196 L95 168 L105 205 L130 200 L150 168 L160 208 L190 202 L208 165 L218 207 L245 200 L265 162 L275 208 L300 201 L320 158 L332 207 L360 199 L382 150 L392 210 L420 201 L440 158 L452 212 L478 200 L500 153 L512 211 L540 203 L560 162 L572 210 L592 186 L598 166" fill="none" stroke="#137a71" stroke-width="2.4" stroke-linejoin="round"/>
+        <path d="M598 166 L601 160 L604 90 L606 86" fill="none" stroke="#b5461f" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="606" cy="86" r="4.5" fill="#b5461f"/>
+        <g font-family="IBM Plex Sans, sans-serif" font-size="12">
+          <text x="596" y="74" text-anchor="end" fill="#b5461f" font-weight="600">Measured today: 420+ ppm</text>
+          <text x="420" y="226" fill="#137a71">Ice core range: about 170 to 300 ppm</text>
+        </g>
+      </svg>
+      </div>
+      <p class="caption">A simplified sketch, not the actual data. It shows the general pattern from the Antarctic ice core record (teal) and the modern measured value (red). The real record has many more ups and downs.</p>
+    </div>
+
+    <h4>Comparing then and now</h4>
+    <p>Scientists compare the modern record to the past in two ways. One is <strong>size</strong>: how much CO₂ and temperature have changed. The other is the <span class="term">rate of change</span>: how fast. In the ice core record, the swings between glacial and interglacial CO₂ levels typically took thousands of years. The modern rise from about 280 to over 420 ppm has happened in less than two centuries.</p>
+    <p>Comparing rates across such different timescales is tricky, because rock records rarely capture short events in fine detail. That’s one reason scientists combine many kinds of evidence, the same approach you’ve seen throughout this lesson.</p>
+
+    <div class="check">
+      <h5>Check yourself</h5>
+      <ol>
+        <li>Why can’t ice cores tell us about the climate during the end-Permian extinction?
+          <br><button class="reveal" aria-expanded="false">Show answer</button>
+          <p class="answer" hidden>The oldest ice cores only reach back about 800,000 years. The end-Permian was 252 million years ago, so geologists use rocks, fossils, and chemical clues in ancient sediments instead.</p></li>
+        <li>What do ice cores show about CO₂ and temperature over the last 800,000 years?
+          <br><button class="reveal" aria-expanded="false">Show answer</button>
+          <p class="answer" hidden>They rose and fell together through each glacial cycle, with CO₂ staying between about 170 and 300 ppm.</p></li>
+      </ol>
+    </div>
+    <div class="notes">
+      <h5>In your notebook</h5>
+      <ol>
+      <li><span class="kind">Sketch</span> Sketch the CO₂ graph from this part. Label the axes, the range of the ice core record, and today’s measured value. Mark where we are in the glacial cycle.</li>
+      <li><span class="kind">Write</span> Explain what each type of evidence (ice cores, historical records, and modern CO₂ measurements) adds to our picture of climate, and why scientists compare the rate of change as well as the size of the change.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WRAP-UP ================= -->
+<section class="part" id="wrap" aria-labelledby="w-h">
+  <aside class="cues"><div class="cues-inner"><h3>Last step</h3><ul><li>Summary</li><li>Photo upload</li></ul></div></aside>
+  <div class="content">
+    <h2 id="w-h">Wrap up your notes</h2>
+    <div class="notes">
+      <h5>In your notebook</h5>
+      <ol>
+      <li><span class="kind">Write</span> In 2–3 sentences of your own: How are Earth’s climate history and its mass extinctions connected, and how do geologists know?</li>
+      </ol>
+    </div>
+    <div class="submit">
+      <h4 style="margin-top:0">Turn in your notebook pages</h4>
+      <ol>
+        <li>Check that every prompt has an answer, and that each sketch is labeled.</li>
+        <li>Make sure your name and the date are at the top of each page.</li>
+        <li>Take one clear photo per page in good light, with the whole page in the frame and the text right side up.</li>
+        <li>Upload your photos to the Notes assignment.</li>
+      </ol>
+    </div>
+    <h4>Key vocabulary</h4>
+    <ul class="vocab">
+      <li><b>Proxy</b>: a preserved clue that stands in for a measurement</li>
+      <li><b>Greenhouse gas</b>: a gas that traps heat, like CO₂</li>
+      <li><b>Tillite</b>: rock made from glacial debris</li>
+      <li><b>Evaporite</b>: salt or gypsum left when water evaporates</li>
+      <li><b>Isotopes</b>: forms of an element with different masses</li>
+      <li><b>Albedo</b>: how much sunlight a surface reflects</li>
+      <li><b>Flood basalt</b>: a huge outpouring of lava</li>
+      <li><b>Mass extinction</b>: a large share of species lost quickly</li>
+      <li><b>Anoxia</b>: water with little or no oxygen</li>
+      <li><b>Iridium anomaly</b>: a spike of iridium marking an impact</li>
+      <li><b>Interglacial</b>: a warm stretch within an ice age</li>
+      <li><b>ppm</b>: parts per million</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>Sources.</strong> Adapted from <a href="https://geo.libretexts.org/Bookshelves/Geology/Book:_An_Introduction_to_Geology_(Johnson_Affolter_Inkenbrandt_and_Mosher)/15:_Global_Climate_Change/15.04:_Prehistoric_Climate_Change">15.4 Prehistoric Climate Change</a> in <em>An Introduction to Geology</em> by Johnson, Affolter, Inkenbrandt, and Mosher (OpenGeology, CC BY-NC-SA 4.0), and <a href="https://geo.libretexts.org/Bookshelves/Geology/Historical_Geology_(Bentley_et_al.)/11:_Mass_Extinctions/11.02:_The_Big_Five">11.2 The Big Five</a> in <em>Historical Geology</em> by Bentley et al. (OpenGeology, CC BY-NC 4.0). Event dates are approximate.</p>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  function $(s){ return document.querySelector(s); }
+
+  /* ---------- Rock clue explorer ---------- */
+  var ROCKS = {
+    till:{img:'<svg viewBox="0 0 360 188" role="img" aria-label="Drawing of tillite: angular stones of many sizes scattered in fine gray mud, one with scratch marks; and a dropstone: a boulder sitting in thin mud layers that bend down beneath it"><rect x="0" y="0" width="170" height="150" rx="4" fill="#8f979e"/><g fill="#d6cdb8" stroke="#3b4247" stroke-width="1.2"><path d="M20 30 l22 -6 l8 16 l-18 10 z"/><path d="M95 20 l30 4 l-4 22 l-28 -6 z"/><path d="M60 70 l40 -8 l12 30 l-36 16 l-18 -18 z"/><path d="M128 80 l18 2 l-2 14 l-16 -4 z"/><path d="M18 100 l14 -4 l6 12 l-14 6 z"/><path d="M120 118 l26 -6 l6 18 l-28 6 z"/><path d="M40 128 l10 -2 l2 8 l-10 2 z"/><path d="M146 40 l8 1 l-1 7 l-8 -1 z"/></g><g stroke="#3b4247" stroke-width=".9"><path d="M68 76 l26 -6 M70 82 l28 -7 M74 89 l26 -7"/></g><g fill="#3b4247"><circle cx="30" cy="70" r="1.6"/><circle cx="110" cy="60" r="1.3"/><circle cx="150" cy="65" r="1.5"/><circle cx="80" cy="130" r="1.4"/><circle cx="20" cy="140" r="1.2"/><circle cx="100" cy="140" r="1.6"/></g><text x="85" y="166" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600" fill="#1f2a33">Tillite</text><text x="85" y="181" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#5d6872">jumbled sizes, scratched stones</text><rect x="190" y="0" width="170" height="150" rx="4" fill="#5f6870"/><g fill="none" stroke="#9aa3a8" stroke-width="1.4"><path d="M190 20 H360 M190 34 H360 M190 48 H360"/><path d="M190 62 H245 Q275 70 305 62 H360"/><path d="M190 76 H240 Q275 98 310 76 H360"/><path d="M190 98 H238 Q275 122 312 98 H360"/><path d="M190 112 H236 Q275 130 314 112 H360"/><path d="M190 126 H234 Q275 138 316 126 H360"/></g><path d="M250 55 q24 -14 50 2 q10 22 -8 34 q-26 8 -40 -6 q-10 -14 -2 -30z" fill="#c9bfa6" stroke="#3b4247" stroke-width="1.4"/><text x="275" y="166" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" font-weight="600" fill="#1f2a33">Dropstone</text><text x="275" y="181" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#5d6872">thin mud layers bend under it</text></svg>',t:"Tillite & dropstones: cold, with glaciers",d:"Glaciers bulldoze a jumbled mix of mud, sand, and boulders. When that mix turns to rock, it’s called tillite. Boulders scratched (striated) by moving ice are a giveaway. Dropstones are rocks that melted out of floating ice and dropped into fine seafloor mud, where a big stone would never land otherwise.",ex:"Example: Ordovician glacial deposits found today in the Sahara and Arabia, which were near the South Pole at the time."},
+    coal:{img:'<svg viewBox="0 0 360 170" role="img" aria-label="Drawing of a coal seam: a thick black layer between gray shale and sandstone, with a fossil fern frond and a flattened stem in the shale just above"><rect x="0" y="0" width="360" height="40" fill="#d6b97f"/><rect x="0" y="40" width="360" height="40" fill="#8aa1ad"/><rect x="0" y="80" width="360" height="54" fill="#22272b"/><rect x="0" y="134" width="360" height="16" fill="#8aa1ad"/><g fill="none" stroke="#1f2a33" stroke-width="1.3"><path d="M60 72 Q110 50 160 48"/><path d="M75 66 l-6 -8 M90 60 l-5 -9 M105 55 l-4 -9 M120 52 l-3 -9 M135 50 l-2 -9 M80 64 l4 9 M95 58 l4 9 M110 54 l3 9 M125 51 l2 9"/><path d="M220 62 H320 M220 66 H320"/></g><g stroke="#3d4448" stroke-width="1"><path d="M0 96 H360 M0 112 H360 M0 124 H360"/></g><text x="180" y="166" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1f2a33">Coal seam (black) with plant fossils in the layer above</text></svg>',t:"Coal: warm and wet, with swamp forests",d:"Coal forms from thick piles of plant material that were buried in swamps before they could rot. That takes lush plant growth and waterlogged ground.",ex:"Example: the vast coal beds of the Carboniferous Period, whose name means “coal-bearing.”"},
+    evap:{img:'<svg viewBox="0 0 360 170" role="img" aria-label="Drawing of evaporites: pale bands of gypsum and salt, with cube-shaped salt crystals"><rect x="0" y="0" width="360" height="150" fill="#f2ede4"/><g fill="#e2d8c8"><rect x="0" y="22" width="360" height="12"/><rect x="0" y="58" width="360" height="9"/><rect x="0" y="96" width="360" height="14"/><rect x="0" y="130" width="360" height="8"/></g><g fill="#ffffff" stroke="#a89a84" stroke-width="1.3"><rect x="40" y="70" width="20" height="20"/><rect x="66" y="74" width="14" height="14"/><rect x="150" y="38" width="18" height="18"/><rect x="250" y="70" width="22" height="22"/><rect x="278" y="76" width="12" height="12"/><rect x="200" y="112" width="16" height="16"/></g><text x="180" y="166" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1f2a33">Evaporites: pale bands and cube-shaped salt crystals</text></svg>',t:"Evaporites: hot and dry",d:"When salty water in a shallow sea or lake evaporates faster than it’s refilled, minerals like rock salt and gypsum are left behind. Thick evaporite layers point to a hot, dry climate.",ex:"Example: thick Permian gypsum and salt layers under West Texas and southeastern New Mexico."},
+    lime:{img:'<svg viewBox="0 0 360 170" role="img" aria-label="Drawing of fossil-rich limestone: light gray rock full of shells, coral, and crinoid pieces"><rect x="0" y="0" width="360" height="150" fill="#cfd7cc"/><g fill="none" stroke="#5e6b5d" stroke-width="1.4"><path d="M40 40 q12 -16 24 0 z M44 40 l4 -9 M52 40 v-11 M60 40 l-4 -9"/><path d="M140 30 q14 -18 28 0 z"/><path d="M250 50 q12 -16 24 0 z"/><path d="M90 100 q14 -18 28 0 z"/><path d="M300 110 q12 -16 24 0 z"/><path d="M200 90 a1.5 1.5 0 0 1 3 0 a3 3 0 0 1 -6 0 a4.5 4.5 0 0 1 9 0 a6 6 0 0 1 -12 0"/><rect x="40" y="120" width="30" height="6"/><path d="M48 120 v6 M56 120 v6 M64 120 v6"/><path d="M180 130 c6 -14 6 -28 0 -40 M186 130 c6 -14 6 -28 0 -40 M192 130 c6 -14 6 -28 0 -40"/></g><text x="180" y="166" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1f2a33">Limestone: packed with shells, coral, and crinoid bits</text></svg>',t:"Limestone & reefs: warm, shallow seas",d:"Most limestone is built from the shells and skeletons of sea creatures. Reefs and thick limestone layers usually form in warm, clear, shallow water, much like the tropics today.",ex:"Example: the Permian Capitan Reef in the Guadalupe Mountains of West Texas."},
+    black:{img:'<svg viewBox="0 0 360 170" role="img" aria-label="Drawing of black shale: very thin, dark, paper-like layers with almost no fossils, and small pyrite grains"><rect x="0" y="0" width="360" height="150" fill="#2b2e31"/><g stroke="#4a4f54" stroke-width="1"><path d="M0 10 H360 M0 18 H360 M0 25 H360 M0 33 H360 M0 40 H360 M0 48 H360 M0 55 H360 M0 63 H360 M0 70 H360 M0 78 H360 M0 85 H360 M0 93 H360 M0 100 H360 M0 108 H360 M0 115 H360 M0 123 H360 M0 130 H360 M0 138 H360"/></g><g fill="#c9a94a"><circle cx="70" cy="60" r="2"/><circle cx="210" cy="104" r="2.4"/><circle cx="300" cy="36" r="1.8"/></g><text x="180" y="166" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="12" fill="#1f2a33">Black shale: thin, dark layers, few fossils</text></svg>',t:"Black shale: oxygen-starved water",d:"Normally, dead plankton rot when it sinks, using up oxygen. When the water has little or no oxygen, the organic material survives and turns the mud black. Widespread black shale often means the oceans were stagnant and oxygen-starved, which can happen when the climate warms quickly.",ex:"Example: Devonian black shales across New York and Pennsylvania, and black layers at the end-Permian extinction."}
+  };
+  var rtabs = document.querySelectorAll(".rock-tabs .pres-tab"), rpanel = $("#rock-panel");
+  function showRock(k){
+    var r = ROCKS[k];
+    rpanel.innerHTML = "<div class='rock-fig'>"+r.img+"</div><h5>"+r.t+"</h5><p>"+r.d+"</p><p class='ex'>"+r.ex+"</p>";
+    rtabs.forEach(function(b){ b.setAttribute("aria-selected", b.dataset.k===k ? "true":"false"); });
+  }
+  rtabs.forEach(function(b){ b.addEventListener("click", function(){ showRock(b.dataset.k); }); });
+  showRock("till");
+
+  /* ---------- Climate timeline ---------- */
+  var TL = [
+    {n:"Huronian glaciation",w:"~2.4 billion years ago",k:"ice",what:"One of the earliest known ice ages, early in the Proterozoic Eon.",ev:"Ancient glacial deposits in Canada and elsewhere.",why:"It happened as oxygen first built up in the atmosphere (the Great Oxidation Event from Unit 2). The new oxygen likely destroyed methane, a powerful greenhouse gas, and the planet cooled."},
+    {n:"Snowball Earth",w:"~717 to 635 million years ago",k:"ice",what:"Two long freezes when ice may have covered most or all of the planet, even near the equator.",ev:"Glacial deposits found right next to limestone (a warm-water rock) in rocks that formed near the equator, on nearly every continent.",why:"Ice reflecting sunlight (albedo) let the cold feed on itself. Volcanoes kept adding CO₂ until the greenhouse effect finally melted the ice. How complete the freeze was is still debated."},
+    {n:"Ordovician glaciation",w:"~445 million years ago",k:"ice",what:"A short, sharp ice age near the end of the Ordovician Period.",ev:"Tillites, scratched boulders, and dropstones in what is now the Sahara and Arabia, which sat near the South Pole then. Oxygen isotopes show the oceans cooled about 5 °C.",why:"A continent drifted over the South Pole while CO₂ levels dropped. It coincides with the first of the Big Five extinctions."},
+    {n:"Coal swamps & late Paleozoic ice",w:"~360 to 290 million years ago",k:"ice",what:"Huge swamp forests grew near the equator while ice sheets covered southern continents.",ev:"Thick coal beds around the world, plus glacial deposits in South Africa, South America, India, and Australia.",why:"Plants pulled enormous amounts of CO₂ out of the air and much of it was buried as coal, cooling the planet."},
+    {n:"Cretaceous hothouse",w:"~145 to 66 million years ago",k:"hot",what:"One of the warmest stretches of the last 500 million years. There’s no evidence of polar ice anywhere.",ev:"Warm-climate fossils at high latitudes, oxygen isotopes showing warm oceans, and widespread limestone and chalk from seas that flooded the continents, including Texas.",why:"High CO₂ levels, linked to active volcanism and seafloor spreading. Sea level was far higher than today."},
+    {n:"Cenozoic cooling",w:"~50 to 34 million years ago",k:"ice",what:"After a warm peak around 50 million years ago, Earth gradually cooled, and permanent ice formed on Antarctica about 34 million years ago.",ev:"Deep-sea sediment cores: oxygen isotopes in foraminifera shells show the oceans cooling and ice growing.",why:"CO₂ levels fell over millions of years, and shifting ocean currents isolated Antarctica in cold water. You’ll see the tectonic side of this in Unit 4."},
+    {n:"Pleistocene ice ages",w:"~2.6 million to 11,700 years ago",k:"ice",what:"Repeated glacial and interglacial cycles. At the peak, ice sheets more than a mile thick covered much of North America.",ev:"Ice cores, deep-sea cores, and landforms left by glaciers across the northern U.S. and Canada.",why:"Small, regular changes in Earth’s orbit (Milankovitch cycles, covered in Unit 7) set the timing, and changes in CO₂ and ice reflectivity amplified them."}
+  ];
+  var track = $("#tl-track"), tdet = $("#tl-detail");
+  track.innerHTML = TL.map(function(e, i){ return '<button class="tl-ev '+e.k+'" data-i="'+i+'" aria-pressed="'+(i===0)+'"><span>'+e.n+'</span><span class="when">'+e.w.replace(" years ago","").replace("~","")+'</span></button>'; }).join("");
+  function showTL(i){
+    var e = TL[i];
+    tdet.innerHTML = "<h5>"+e.n+"</h5><span class='tag "+e.k+"'>"+(e.k==="ice"?"Icehouse":"Hothouse")+" · "+e.w+"</span>"+
+      "<dl><dt>What happened</dt><dd>"+e.what+"</dd><dt>Evidence</dt><dd>"+e.ev+"</dd><dt>Likely causes</dt><dd>"+e.why+"</dd></dl>";
+    track.querySelectorAll(".tl-ev").forEach(function(b, j){ b.setAttribute("aria-pressed", j===i ? "true":"false"); });
+  }
+  track.addEventListener("click", function(e){ var b = e.target.closest(".tl-ev"); if (b) showTL(+b.dataset.i); });
+  showTL(0);
+
+  /* ---------- Big Five ---------- */
+  var B5 = [
+    {n:"End-Ordovician",w:"~443 million years ago",k:"ice",kl:"Rapid cooling",lost:"Marine invertebrates such as trilobites, brachiopods, and graptolites. Almost all life was still in the ocean.",cause:"Global cooling and glaciation. As ice grew, sea level dropped and drained the shallow seas where most animals lived.",ev:"Glacial deposits from that time, and oxygen isotopes showing ocean cooling."},
+    {n:"Late Devonian",w:"~372 and 359 million years ago",k:"ice",kl:"Ocean anoxia, then cooling",lost:"Reef builders were hit hardest; reefs nearly disappeared. Armored fish (placoderms) were eventually wiped out.",cause:"A drawn-out series of crises over millions of years. Widespread oxygen-starved oceans, possibly linked to nutrients washing off land from the first forests, followed by cooling. Its causes are still debated.",ev:"Thick black shales, and late Devonian glacial dropstones in the Appalachians."},
+    {n:"End-Permian",w:"~252 million years ago",k:"hot",kl:"Rapid warming",lost:"The worst ever: more than 80% of species. The last trilobites, fusulinids, and many reptiles and plants on land.",cause:"The Siberian Traps, one of the largest flood basalt eruptions known, released huge amounts of CO₂. The planet warmed rapidly, and the oceans became hot, acidic, and oxygen-starved.",ev:"Flood basalts dated to the extinction, oxygen isotopes showing the oceans warmed by about 6 °C, and black, oxygen-poor layers."},
+    {n:"End-Triassic",w:"~201 million years ago",k:"hot",kl:"Rapid warming",lost:"Many marine reptiles and ammonoids, the last conodonts, and many crocodile relatives on land, which cleared the way for dinosaurs.",cause:"Massive volcanic eruptions as Pangaea began to split apart released CO₂ and warmed the planet.",ev:"Basalt from the same eruptions found on four continents, and fossil leaves with fewer stomata, a sign of high CO₂."},
+    {n:"End-Cretaceous",w:"~66 million years ago",k:"imp",kl:"Asteroid impact + volcanism",lost:"About three-quarters of species, including all dinosaurs except birds, the ammonites, and many kinds of plankton.",cause:"The Chicxulub asteroid impact, likely with help from the Deccan Traps eruptions in India. Dust and gases blocked sunlight and collapsed food chains.",ev:"The iridium layer, shocked quartz, glass spherules, tsunami deposits (including in Texas), and the Chicxulub crater itself."}
+  ];
+  var row = $("#b5-row"), bdet = $("#b5-detail");
+  row.innerHTML = B5.map(function(e, i){ return '<button class="b5-ev" data-i="'+i+'" aria-pressed="'+(i===0)+'"><b>'+e.n+'</b><span>'+e.w.replace(" million years ago"," Ma").replace("~","")+'</span></button>'; }).join("");
+  function showB5(i){
+    var e = B5[i];
+    bdet.innerHTML = "<h5>"+e.n+" extinction</h5><span class='tag "+e.k+"'>"+e.kl+" · "+e.w+"</span>"+
+      "<dl><dt>What was lost</dt><dd>"+e.lost+"</dd><dt>Likely cause</dt><dd>"+e.cause+"</dd><dt>Evidence</dt><dd>"+e.ev+"</dd></dl>";
+    row.querySelectorAll(".b5-ev").forEach(function(b, j){ b.setAttribute("aria-pressed", j===i ? "true":"false"); });
+  }
+  row.addEventListener("click", function(e){ var b = e.target.closest(".b5-ev"); if (b) showB5(+b.dataset.i); });
+  showB5(0);
+
+/* ---------- Reveal answers ---------- */
+  document.querySelectorAll(".reveal").forEach(function(b){
+    b.addEventListener("click", function(){
+      var a = b.nextElementSibling;
+      var open = a.hidden;
+      a.hidden = !open;
+      b.setAttribute("aria-expanded", open ? "true":"false");
+      b.textContent = open ? "Hide answer" : "Show answer";
+    });
+  });
+
+  
+/* ---------- Videos: click to load ---------- */
+  document.querySelectorAll(".yt").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube.com/embed/" + btn.dataset.id + "?autoplay=1&rel=0";
+      f.title = btn.dataset.title;
+      f.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+      f.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      f.setAttribute("allowfullscreen", "");
+      btn.parentNode.replaceChild(f, btn);
+    });
+  });
+
+  
+  window.__api = {TL:TL, B5:B5};
+})();
+
+</script>
+</body>
+</html>
